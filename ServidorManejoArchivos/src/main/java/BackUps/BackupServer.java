@@ -7,6 +7,8 @@ package BackUps;
 import java.io.*;
 import java.net.*;
 
+// Se simula el trabajo del NFS
+
 public class BackupServer {
     private static final int PORT = 6000; // Puerto del servidor secundario
 
