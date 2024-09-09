@@ -1,0 +1,2 @@
+# GestorArchivosParcial
+GestorArchivosParcial
