@@ -1,2 +1,6 @@
-francisco\mora\appclientearchivos\FileManagerClient$1.class
-francisco\mora\appclientearchivos\FileManagerClient.class
+francisco\mora\appclientearchivos\FileManagerGUI.class
+francisco\mora\appclientearchivos\NFSCliente.class
+francisco\mora\appclientearchivos\NFSFileManagerClient$1.class
+francisco\mora\appclientearchivos\NFSClient.class
+francisco\mora\appclientearchivos\NFSFileManagerClient$2.class
+francisco\mora\appclientearchivos\NFSFileManagerClient.class
