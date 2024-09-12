@@ -44,8 +44,8 @@ public class FileManagerGUI extends JFrame {
         searchPanel.add(searchButton);
         panel.add(searchPanel, BorderLayout.NORTH);
 
-        // Árbol de carpetas
-       
+        // Árbol de carpetas (inicializando correctamente el rootNode)
+        rootNode = new DefaultMutableTreeNode("Raíz");
         folderTree = new JTree(rootNode);
         folderTree.addTreeSelectionListener(e -> {
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) folderTree.getLastSelectedPathComponent();
@@ -95,16 +95,17 @@ public class FileManagerGUI extends JFrame {
         }
     }
 
-    // Cargar el árbol de carpetas
     private void loadFileTree() {
+        rootNode.removeAllChildren(); // Limpiar el árbol antes de recargar
+
         try {
             out.println("listar /");  // Listar desde la raíz
 
             String response;
             while (!(response = in.readLine()).equals("FIN_LISTA")) {
-                // Asume que el servidor marca las carpetas con un "/" al final o de alguna manera distintiva.
                 if (response.endsWith("/")) {
-                    DefaultMutableTreeNode folderNode = new DefaultMutableTreeNode(response);
+                    // Añadir como nodo de carpeta
+                    DefaultMutableTreeNode folderNode = new DefaultMutableTreeNode(response.substring(0, response.length() - 1));  // Eliminar el "/"
                     rootNode.add(folderNode);
                 }
             }
